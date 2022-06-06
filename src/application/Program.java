@@ -30,9 +30,16 @@ public class Program {
 		}
 
 		Seller newseller = new Seller(null,"Greg","greg@gmail.com",new Date(),4000.0,department);
-		sellerDao.insert(newseller);
 		System.out.println("insert test: ");
+		sellerDao.insert(newseller);
 		System.out.println(newseller);
+		
+		
+		seller = sellerDao.findById(1);
+		seller.setName("Bruce Wayne");
+		sellerDao.update(seller);
+		System.out.println("update test: ");
+		System.out.println(seller);
 	}
 
 }
